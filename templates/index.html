@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Certificate Uploader</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            /* This style sets the width of all images to 100%: */
+            img {
+              width: 100%;
+            }
+
+            /* Animation */
+
+            @keyframes fadeInUp {
+                from {
+                    transform: translate3d(0,40px,0)
+                }
+
+                to {
+                    transform: translate3d(0,0,0);
+                    opacity: 1
+                }
+            }
+
+            @-webkit-keyframes fadeInUp {
+                from {
+                    transform: translate3d(0,40px,0)
+                }
+
+                to {
+                    transform: translate3d(0,0,0);
+                    opacity: 1
+                }
+            }
+
+            .container {
+                animation-duration: 1s;
+                animation-fill-mode: both;
+                -webkit-animation-duration: 1s;
+                -webkit-animation-fill-mode: both
+            }
+
+            .animatedFadeInUp {
+                opacity: 0
+            }
+
+            .fadeInUp {
+                opacity: 0;
+                animation-name: fadeInUp;
+                -webkit-animation-name: fadeInUp;
+            }
+        </style>
+        <script>
+            function submission() {
+            alert("The file has been uploaded successfully.");
+            }
+        </script>
+    </head>
+    <body><br /><br />
+        <div class="container animatedFadeInUp fadeInUp">
+            <img src="https://serpongupdate.com/wp-content/uploads/2021/03/PARAMOUNT-LAND-scaled.jpg" alt="Paramount Logo" style="width:128px;height:128px;">
+            <br />
+            <div class="panel panel-default">
+                 <div class="panel-heading">
+                 <h3 class="panel-title">Certificate Uploader</h3>
+                 </div>
+                 <div class="panel-body">
+                     <span id="success_message"></span>
+                     <form method="post" id="file_uploader" action="" onsubmit="submission()" enctype="multipart/form-data">
+                         <div class="form-group">
+                             <label>Upload File</label>
+                             <input type="file" name="file" id="file" accept=".pdf" required/>
+                         </div>
+
+                         <div class="form-group">
+                            <label>Certificate Type</label>
+                            <input type="text" list="cert_type" name="cert_type" required />
+                            <datalist id="cert_type">
+                             <option value="SPH">
+                             <option value="HGB">
+                            </datalist>
+                         </div>
+
+                         <div class="form-group">
+                             <label>Certificate ID</label>
+                             <input type="text" name="cert_id" id="cert_id" class="form-control" required />
+                         </div>
+                         
+                         <div class="form-group" align="center">
+                             <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" />
+                         </div>
+                     </form>
+                 </div>
+             </div>
+         </div>
+    </body>
+</html>
